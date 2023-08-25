@@ -200,7 +200,7 @@ def get_new_weights_and_biases(
         y_hat = sigmoid(z2)
 
         # loss calculation
-        batch_loss+=(y_hat - y)**2
+        batch_loss+=np.sum((y_hat - y)**2)
 
         # backward pass
         weight_gradients, bias_gradients = compute_gradients(
